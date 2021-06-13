@@ -1,0 +1,35 @@
+<div class="search-box">
+    <input type="search" id="drink-search" class="search" name="q" [(ngModel)]="search">
+    <button>Search</button>
+</div>
+
+<div class="wrapper">
+    <div class="card drink-filter">
+        <ng-container *ngFor="let category of categoryList; let i = index">
+            <div class="check-box">
+                <input type="checkbox" #checkboxes id="{{i}}" name="{{category.label}}" value="{{category.value}}" (change)="filterChange()">
+                <label for="{{i}}">{{category.label}} </label>
+            </div>
+        </ng-container>
+        <button class="btn drink-filter-action" (click)="reset()">reset</button>
+    </div>
+
+    <div class="drink">
+        <ng-container *ngFor="let drink of filteredDrinks | drinksFiter:'strDrink,strCategory,strInstructions':search">
+            <div class="card">
+                <div class="row">
+                    <div class="item">
+                        <img class="drink-img" src="{{drink.strDrinkThumb}}" alt="">
+                    </div>
+                    <div class="item drink-info">
+                        <p>{{drink.strDrink}} ({{drink.strCategory}})</p>
+                        <p>
+                            {{drink.strInstructions}}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+    </div>
+
+</div>

@@ -6,7 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { MatCardModule } from '@angular/material/card';
 import { DrinksComponent } from './drinks/drinks.component'
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { DrinksFiterPipe } from './drinks/drinks-fiter.pipe';
 @NgModule({
   declarations: [
@@ -19,8 +19,7 @@ import { DrinksFiterPipe } from './drinks/drinks-fiter.pipe';
     BrowserAnimationsModule,
     MatCardModule,
     HttpClientModule,
-    FormsModule,
-    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

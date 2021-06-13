@@ -1,6 +1,5 @@
 import { Component, ElementRef, OnInit, QueryList, ViewChildren } from '@angular/core';
 import { DrinksService } from './drinks.service';
-import { FormArray, FormBuilder, FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-drinks',
@@ -17,7 +16,7 @@ export class DrinksComponent implements OnInit {
   @ViewChildren("checkboxes")
   checkboxes!: QueryList<ElementRef>;
 
-  constructor(private _drinks: DrinksService, private formBuilder: FormBuilder) {
+  constructor(private _drinks: DrinksService) {
 
    }
 
